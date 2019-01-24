@@ -1,0 +1,7 @@
+*.swp
+config.make
+Makefile
+*.qbs
+bin/*
+obj/*
+
