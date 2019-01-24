@@ -10,8 +10,10 @@ class Efeito {
         Efeito();
 
         ofPixels pixelsEfeito;
+        ofxCvFloatImage floatImage;   
+        ofxCvGrayscaleImage grayImage;   
         ofxCvColorImage colorImage;   
-        virtual void aplicaEfeito( ofFbo *fboBrisa);
+        virtual void aplicaEfeito( ofFbo *fboBrisa, ofPixels *pixelsBrisa);
 };
 
 #endif

@@ -10,6 +10,7 @@ class Brisa {
 
         vector<Efeito*> efeitos;
         ofFbo fboBrisa;
+        ofPixels pixelsBrisa;
         Fonte *fonte;
 
         void setup(Fonte *fonteBrisa);

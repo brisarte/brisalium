@@ -16,7 +16,7 @@ void FonteKinect::update(){
     fboFonte.begin();
     if( kinect->isConnected() ) {
         kinect->update();
-        kinect->drawDepth(0,0,1024,768);
+        kinect->draw(0,0,1024,768);
     }
     fboFonte.end();
 }

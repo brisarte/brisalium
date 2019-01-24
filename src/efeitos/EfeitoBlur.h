@@ -4,5 +4,5 @@ class EfeitoBlur : public Efeito {
     public:
         EfeitoBlur();
 
-        void aplicaEfeito( ofFbo *fboBrisa);
+        void aplicaEfeito( ofFbo *fboBrisa, ofPixels *pixelsBrisa);
 };
