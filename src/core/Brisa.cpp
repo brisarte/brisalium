@@ -11,15 +11,20 @@ void Brisa::setup(Fonte *fonteBrisa) {
      * (será realmente necessário?)
      */
     fboBrisa.begin();
-    ofClear(255,255,255, 0);
+    ofClear(0,0,0);
     fboBrisa.end();
 
-    efeitos.push_back(new EfeitoBlur);
+ //   efeitos.push_back(new EfeitoBlur);
+ //   efeitos.push_back(new EfeitoContorno);
     cout << "Brisa setup;\n";
 }
 void Brisa::update() {
     updateFonte();   
     aplicaEfeitos();
+}
+
+void Brisa::addEfeito(Efeito* efeito) {
+    efeitos.push_back(efeito);
 }
 
 void Brisa::updateFonte() {

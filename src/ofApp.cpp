@@ -2,22 +2,26 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-
-    FonteKinect *fonteTeste = new FonteKinect(&kinectGlobal);
-    brisas = new Brisa;
-    brisas->setup(fonteTeste);
+    ofBackground(0,0,0); 
+    FonteKinect *fonteKinect = new FonteKinect(&kinectGlobal);
+    FonteTeste *fonteTeste = new FonteTeste();
+    brisa = new Brisa;
+    brisa->setup(fonteTeste);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
 
-    brisas->update();
+    brisa->update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
 
-    brisas->draw();
+    for( int i = gui->brisas.size()-1; i >= 0; i-- ) {
+        gui->brisas[i]->draw();
+    }
+    brisa->draw();
 }
 
 //--------------------------------------------------------------

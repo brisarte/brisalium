@@ -4,14 +4,13 @@
 #include "ofxOpenCv.h"
 #include "ofxKinect.h"
 #include "GuiApp.h"
-#include "core/Brisa.h"
 
 class ofApp : public ofBaseApp{
 
 	public:
         ofxKinect kinectGlobal;
 
-        Brisa* brisas;
+        Brisa* brisa;
 		void setup();
 		void update();
 		void draw();

@@ -1,5 +1,6 @@
 #include "Efeito.h"
 #include "EfeitoBlur.h"
+#include "EfeitoContorno.h"
 #include "Fonte.h"
 #include "FonteTeste.h"
 #include "FonteKinect.h"
@@ -18,5 +19,6 @@ class Brisa {
         void draw();
 
         void updateFonte();
+        void addEfeito(Efeito* efeito);
         void aplicaEfeitos();
 };

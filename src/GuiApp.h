@@ -4,6 +4,7 @@
 #include "ofMain.h"
 #include "ofxOpenCv.h"
 #include "ofxKinect.h"
+#include "core/Brisa.h"
 
 class GuiApp: public ofBaseApp {
     public:
@@ -13,4 +14,5 @@ class GuiApp: public ofBaseApp {
         void mousePressed(int x, int y, int iButton) ;
 
         ofxImGui::Gui gui;
+        vector<Brisa*> brisas;
 };
