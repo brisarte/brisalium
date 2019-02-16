@@ -6,7 +6,6 @@ float t0, t1;
 
 void GuiApp::setup(){
     gui.setup();
-
     ImGui::GetIO().MouseDrawCursor = false;
 }
 
@@ -31,21 +30,26 @@ void GuiApp::draw() {
 
     ImGui::End();
 
+    // Printa os controles de cada brisa indvidualmente
     ImGui::SetNextWindowSize(ofVec2f(500, 200), ImGuiSetCond_FirstUseEver);
     for( int i = brisas.size()-1; i >= 0; i-- ) {
         string nomeBrisa = "Brisa " + to_string(i + 1);
         ImGui::Begin(nomeBrisa.c_str());
-        if (ImGui::Button("Adicionar Fonte")) {  }
+        drawBrisaControls(i);
         ImGui::End();
     }
-    // TODO
-    // unico btn que aparece no começo é o de add fonte pra caso a brisa n tenha fonte
-    // se ja tiver fonte aparece os botoes de add efeito
-
-
     gui.end();
 }
 
-void GuiApp::draw
+void GuiApp::drawBrisaControls(int i) {
+    // TODO
+    // unico btn que aparece no começo é o de add fonte pra caso a brisa n tenha fonte
+    if (ImGui::Button("Adicionar Fonte")) { 
+        FonteTeste *fonteTeste = new FonteTeste();
+        brisas[i]->setup(fonteTeste);
+    }
+    // se ja tiver fonte aparece os botoes de add efeito
+}
+
 void GuiApp::mousePressed(int x, int y, int iButton) {
 }

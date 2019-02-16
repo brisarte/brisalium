@@ -13,6 +13,8 @@ class GuiApp: public ofBaseApp {
         void draw();
         void mousePressed(int x, int y, int iButton) ;
 
+        void drawBrisaControls(int i);
+            
         ofxImGui::Gui gui;
         vector<Brisa*> brisas;
 };

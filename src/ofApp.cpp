@@ -12,7 +12,11 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
 
-    brisa->update();
+    for( int i = gui->brisas.size()-1; i >= 0; i-- ) {
+        if(gui->brisas[i]->hasFonte) {
+            gui->brisas[i]->update();
+        }
+    }
 }
 
 //--------------------------------------------------------------
@@ -21,7 +25,6 @@ void ofApp::draw(){
     for( int i = gui->brisas.size()-1; i >= 0; i-- ) {
         gui->brisas[i]->draw();
     }
-    brisa->draw();
 }
 
 //--------------------------------------------------------------

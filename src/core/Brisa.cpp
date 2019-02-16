@@ -1,9 +1,14 @@
 #include "Brisa.h"
 
+Brisa::Brisa() {
+    hasFonte = false;
+}
+
 void Brisa::setup(Fonte *fonteBrisa) {
 
     fonte = fonteBrisa;
     fonte->setup();
+    hasFonte = true;
     fboBrisa.allocate(1024, 768);
     pixelsBrisa.allocate(1024,768, 3);
 

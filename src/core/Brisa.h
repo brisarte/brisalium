@@ -9,6 +9,7 @@ class Brisa {
 
     public:
 
+        Brisa();
         vector<Efeito*> efeitos;
         ofFbo fboBrisa;
         ofPixels pixelsBrisa;
@@ -21,4 +22,6 @@ class Brisa {
         void updateFonte();
         void addEfeito(Efeito* efeito);
         void aplicaEfeitos();
+
+        bool hasFonte;
 };
