@@ -1,9 +1,12 @@
 #include "Efeito.h"
 #include "EfeitoBlur.h"
 #include "EfeitoContorno.h"
+#include "EfeitoRastro.h"
 #include "Fonte.h"
 #include "FonteTeste.h"
 #include "FonteKinect.h"
+#include "FonteVideo.h"
+#include "FonteCamera.h"
 
 class Brisa {
 

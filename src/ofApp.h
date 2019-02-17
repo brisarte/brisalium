@@ -8,8 +8,6 @@
 class ofApp : public ofBaseApp{
 
 	public:
-        ofxKinect kinectGlobal;
-
         Brisa* brisa;
 		void setup();
 		void update();

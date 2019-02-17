@@ -14,6 +14,8 @@ class Efeito {
         ofxCvGrayscaleImage grayImage;   
         ofxCvColorImage colorImage;   
         virtual void aplicaEfeito( ofFbo *fboBrisa, ofPixels *pixelsBrisa);
+
+        virtual void drawControls();
 };
 
 #endif

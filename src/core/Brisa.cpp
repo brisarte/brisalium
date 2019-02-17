@@ -19,8 +19,6 @@ void Brisa::setup(Fonte *fonteBrisa) {
     ofClear(0,0,0);
     fboBrisa.end();
 
- //   efeitos.push_back(new EfeitoBlur);
- //   efeitos.push_back(new EfeitoContorno);
     cout << "Brisa setup;\n";
 }
 void Brisa::update() {
@@ -35,6 +33,7 @@ void Brisa::addEfeito(Efeito* efeito) {
 void Brisa::updateFonte() {
     fboBrisa.begin();
     fonte->update();
+    ofClear(0,0,0);
     fonte->getFbo().draw(0,0,1024,768);
     fboBrisa.end();
     fboBrisa.readToPixels(pixelsBrisa);
@@ -43,9 +42,11 @@ void Brisa::updateFonte() {
 void Brisa::draw() {
     fboBrisa.draw(0,0,1024,768);
 }
+
 void Brisa::aplicaEfeitos() {
     for( int i = 0; i < efeitos.size(); i++ )
     {
         efeitos[i]->aplicaEfeito(&fboBrisa, &pixelsBrisa);
+        fboBrisa.readToPixels(pixelsBrisa);
     }
 }

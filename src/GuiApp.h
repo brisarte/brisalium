@@ -8,6 +8,8 @@
 
 class GuiApp: public ofBaseApp {
     public:
+        ofxKinect kinectGlobal;
+
         void setup();
         void update();
         void draw();

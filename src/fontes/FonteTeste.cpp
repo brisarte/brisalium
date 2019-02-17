@@ -21,6 +21,16 @@ void FonteTeste::update(){
     ofDrawRectangle( 768, 256, 256, 256);
     ofSetColor(255, 255, 0); // yellow
     ofDrawRectangle( 768, 512, 256, 256);
+    ofSetColor(255, 255, 255); // white
+    ofDrawRectangle( 256, 0, 256, 256);
+    int interval = 256;
+    int posy = 0;
+    for(int interval = 256; interval > 1; interval/=2 ) {
+        posy += interval;
+        for(int i = 256; i < 768; i+=interval ) {
+            ofDrawRectangle( i, posy, interval/2, interval/2);
+        }
+    }
     fboFonte.end();
 }
 void FonteTeste::drawControls(){

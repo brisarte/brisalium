@@ -3,15 +3,10 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     ofBackground(0,0,0); 
-    FonteKinect *fonteKinect = new FonteKinect(&kinectGlobal);
-    FonteTeste *fonteTeste = new FonteTeste();
-    brisa = new Brisa;
-    brisa->setup(fonteTeste);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
     for( int i = gui->brisas.size()-1; i >= 0; i-- ) {
         if(gui->brisas[i]->hasFonte) {
             gui->brisas[i]->update();
@@ -21,7 +16,6 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
     for( int i = gui->brisas.size()-1; i >= 0; i-- ) {
         gui->brisas[i]->draw();
     }

@@ -42,13 +42,52 @@ void GuiApp::draw() {
 }
 
 void GuiApp::drawBrisaControls(int i) {
-    // TODO
     // unico btn que aparece no começo é o de add fonte pra caso a brisa n tenha fonte
-    if (ImGui::Button("Adicionar Fonte")) { 
-        FonteTeste *fonteTeste = new FonteTeste();
-        brisas[i]->setup(fonteTeste);
+    if (!brisas[i]->hasFonte) {
+        if (ImGui::Button("Adicionar Fonte Kinect")) { 
+            FonteKinect *fonteKinect = new FonteKinect(&kinectGlobal);
+            brisas[i]->setup(fonteKinect);
+        }
+        ImGui::SameLine();
+        if (ImGui::Button("Adicionar Fonte Camera")) { 
+            FonteCamera *fonteCamera = new FonteCamera();
+            brisas[i]->setup(fonteCamera);
+        }
+        ImGui::SameLine();
+        if (ImGui::Button("Adicionar Fonte Teste")) { 
+            FonteTeste *fonteTeste = new FonteTeste();
+            brisas[i]->setup(fonteTeste);
+        }
+        ImGui::SameLine();
+        if (ImGui::Button("Adicionar Fonte Video")) { 
+            FonteVideo *fonteVideo = new FonteVideo();
+            brisas[i]->setup(fonteVideo);
+        }
     }
     // se ja tiver fonte aparece os botoes de add efeito
+    if (brisas[i]->hasFonte) {
+        if (ImGui::Button("Adicionar Efeito Contorno")) { 
+            EfeitoContorno *efeitoContorno = new EfeitoContorno();
+            brisas[i]->addEfeito(efeitoContorno);
+        }
+        if (ImGui::Button("Adicionar Efeito Blur")) { 
+            EfeitoBlur *efeitoBlur = new EfeitoBlur();
+            brisas[i]->addEfeito(efeitoBlur);
+        }
+        if (ImGui::Button("Adicionar Efeito Rastro")) { 
+            EfeitoRastro *efeitoRastro = new EfeitoRastro();
+            brisas[i]->addEfeito(efeitoRastro);
+        }
+    }
+    for( int iEfeito = 0; iEfeito < brisas[i]->efeitos.size(); iEfeito++) {
+        if (ImGui::Button("Remover efeito")) {
+            brisas[i]->efeitos.erase(brisas[i]->efeitos.begin()+iEfeito);
+        }
+    }
+
+    if (ImGui::Button("Excluir Brisa")) {
+        brisas.erase(brisas.begin()+i);
+    }
 }
 
 void GuiApp::mousePressed(int x, int y, int iButton) {

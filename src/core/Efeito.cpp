@@ -7,3 +7,6 @@ Efeito::Efeito() {
 void Efeito::aplicaEfeito( ofFbo *fboBrisa, ofPixels *pixelsBrisa) {
     cout << "Efeito # aplicado;\n";
 }
+
+void Efeito::drawControls() {
+}

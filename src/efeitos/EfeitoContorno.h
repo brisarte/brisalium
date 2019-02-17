@@ -6,4 +6,5 @@ class EfeitoContorno : public Efeito {
 
         ofxCvContourFinder contourFinder;
         void aplicaEfeito( ofFbo *fboBrisa, ofPixels *pixelsBrisa);
+        void drawControls();
 };
