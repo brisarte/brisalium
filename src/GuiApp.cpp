@@ -67,7 +67,7 @@ void GuiApp::drawBrisaControls(int i) {
     // se ja tiver fonte aparece os botoes de add efeito
     if (brisas[i]->hasFonte) {
         if (ImGui::Button("Adicionar Efeito Contorno")) { 
-            EfeitoContorno *efeitoContorno = new EfeitoContorno();
+            EfeitoContorno *efeitoContorno = new EfeitoContorno(2);
             brisas[i]->addEfeito(efeitoContorno);
         }
         if (ImGui::Button("Adicionar Efeito Blur")) { 
@@ -78,8 +78,13 @@ void GuiApp::drawBrisaControls(int i) {
             EfeitoRastro *efeitoRastro = new EfeitoRastro();
             brisas[i]->addEfeito(efeitoRastro);
         }
+        if (ImGui::Button("Adicionar Efeito Brilho/Contraste")) { 
+            EfeitoBrilhoContraste *efeitoBrilhoContraste = new EfeitoBrilhoContraste();
+            brisas[i]->addEfeito(efeitoBrilhoContraste);
+        }
     }
     for( int iEfeito = 0; iEfeito < brisas[i]->efeitos.size(); iEfeito++) {
+        brisas[i]->efeitos[iEfeito]->drawControls();ImGui::SameLine();
         if (ImGui::Button("Remover efeito")) {
             brisas[i]->efeitos.erase(brisas[i]->efeitos.begin()+iEfeito);
         }
@@ -89,6 +94,8 @@ void GuiApp::drawBrisaControls(int i) {
         brisas.erase(brisas.begin()+i);
     }
 }
+
+
 
 void GuiApp::mousePressed(int x, int y, int iButton) {
 }

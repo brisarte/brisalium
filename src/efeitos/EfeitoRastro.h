@@ -5,8 +5,9 @@ class EfeitoRastro : public Efeito {
         EfeitoRastro();
 
         int iRastro;
+        int iForcaRastro;
 
-        ofxCvColorImage rastroImg;   
+        ofxCvColorImage rastroImage;   
         void aplicaEfeito( ofFbo *fboBrisa, ofPixels *pixelsBrisa);
         void drawControls();
 };

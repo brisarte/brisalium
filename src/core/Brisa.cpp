@@ -21,6 +21,7 @@ void Brisa::setup(Fonte *fonteBrisa) {
 
     cout << "Brisa setup;\n";
 }
+
 void Brisa::update() {
     updateFonte();   
     aplicaEfeitos();
@@ -40,7 +41,7 @@ void Brisa::updateFonte() {
 }
 
 void Brisa::draw() {
-    fboBrisa.draw(0,0,1024,768);
+     fboBrisa.draw(0,0,1024,768);
 }
 
 void Brisa::aplicaEfeitos() {

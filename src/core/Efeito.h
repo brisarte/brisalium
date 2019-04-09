@@ -9,10 +9,13 @@ class Efeito {
     public:
         Efeito();
 
+        int id;
+
         ofPixels pixelsEfeito;
         ofxCvFloatImage floatImage;   
         ofxCvGrayscaleImage grayImage;   
         ofxCvColorImage colorImage;   
+
         virtual void aplicaEfeito( ofFbo *fboBrisa, ofPixels *pixelsBrisa);
 
         virtual void drawControls();
