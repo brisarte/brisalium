@@ -1,13 +1,15 @@
 #include "FonteTeste.h"
 
 FonteTeste::FonteTeste() {
+    Fonte();
 }
 
 void FonteTeste::setup(){
     corTeste.set(255,0,0); // red
+    cout << "Fonte carregada: Teste de cores;\n";
 }
-void FonteTeste::update(){
-    fboFonte.begin();
+
+void FonteTeste::draw(){
     ofSetColor(corTeste);
     ofFill();
     ofDrawRectangle( 0, 0, 256, 256);
@@ -31,7 +33,6 @@ void FonteTeste::update(){
             ofDrawRectangle( i, posy, interval/2, interval/2);
         }
     }
-    fboFonte.end();
 }
 void FonteTeste::drawControls(){
 }

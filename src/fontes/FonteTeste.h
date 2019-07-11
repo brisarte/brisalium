@@ -5,6 +5,6 @@ class FonteTeste : public Fonte {
         FonteTeste();
         ofColor corTeste;
         void setup();
-        void update();
+        void draw();
         void drawControls();
 };

@@ -8,6 +8,6 @@ class FonteCamera : public Fonte {
 
 
         void setup();
-        void update();
+        void draw();
         void drawControls();
 };

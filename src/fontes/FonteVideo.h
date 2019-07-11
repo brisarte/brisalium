@@ -10,6 +10,6 @@ class FonteVideo : public Fonte {
         void loadVideo(string videoPath);
 
         void setup();
-        void update();
+        void draw();
         void drawControls();
 };

@@ -8,23 +8,18 @@ void Brisa::setup(Fonte *fonteBrisa) {
 
     fonte = fonteBrisa;
     fonte->setup();
-    hasFonte = true;
-    fboBrisa.allocate(1024, 768);
+    fboBrisa.allocate(1024, 768, GL_RGBA);
     pixelsBrisa.allocate(1024,768, 3);
-
-    /* Limpa o fbo
-     * (será realmente necessário?)
-     */
-    fboBrisa.begin();
-    ofClear(0,0,0);
-    fboBrisa.end();
+    hasFonte = true;
 
     cout << "Brisa setup;\n";
 }
 
 void Brisa::update() {
-    updateFonte();   
-    aplicaEfeitos();
+    if(this->hasFonte) {
+       updateFonte();   
+       aplicaEfeitos();
+    }
 }
 
 void Brisa::addEfeito(Efeito* efeito) {
@@ -33,15 +28,13 @@ void Brisa::addEfeito(Efeito* efeito) {
 
 void Brisa::updateFonte() {
     fboBrisa.begin();
-    fonte->update();
-    ofClear(0,0,0);
-    fonte->getFbo().draw(0,0,1024,768);
+    fonte->draw();
     fboBrisa.end();
     fboBrisa.readToPixels(pixelsBrisa);
 }
 
 void Brisa::draw() {
-     fboBrisa.draw(0,0,1024,768);
+    fboBrisa.draw(0,0);
 }
 
 void Brisa::aplicaEfeitos() {

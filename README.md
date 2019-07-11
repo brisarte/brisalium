@@ -1,0 +1,5 @@
+- instalar addons
+ - ImGui 
+- clona o projeto
+- roda o projeto
+ - make make RunRelease

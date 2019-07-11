@@ -12,9 +12,8 @@
          ofFbo fboFonte;
 
          virtual void setup();
-         virtual void update();
+         virtual void draw();
          virtual void drawControls();
-         ofFbo getFbo();
 };
 
 #endif

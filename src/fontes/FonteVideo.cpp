@@ -6,11 +6,9 @@ FonteVideo::FonteVideo() {
 void FonteVideo::setup(){
 }
 
-void FonteVideo::update(){
-    fboFonte.begin();
+void FonteVideo::draw(){
     ofSetColor(255,255,255);
     ofDrawRectangle( 768, 512, 256, 256);
-    fboFonte.end();
 }
 
 void FonteVideo::drawControls(){

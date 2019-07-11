@@ -12,7 +12,7 @@ void FonteCamera::setup(){
     grabber.initGrabber( 640, 480 );
 }
 
-void FonteCamera::update(){
+void FonteCamera::draw(){
     grabber.update();
     fboFonte.begin();
     ofSetColor(255,255,255);

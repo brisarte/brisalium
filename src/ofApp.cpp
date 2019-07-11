@@ -7,17 +7,15 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    for( int i = gui->brisas.size()-1; i >= 0; i-- ) {
-        if(gui->brisas[i]->hasFonte) {
-            gui->brisas[i]->update();
-        }
+    for( int i = 0; i < gui->brisas.size(); i++ ) {
+        gui->brisas[i]->update();
     }
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     for( int i = gui->brisas.size()-1; i >= 0; i-- ) {
-        gui->brisas[i]->draw();
+      gui->brisas[i]->draw();
     }
 }
 
